@@ -1,0 +1,260 @@
+/* Thiết lập font và màu nền chung */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f0f4f9;
+}
+/* Kiểu dáng cho thẻ form chính */
+.form-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 3rem;
+  max-width: 800px;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+/* Kiểu dáng cho các thẻ chọn ban */
+.ban-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem; /* p-6 */
+  border: 1px solid #d1d5db; /* border-gray-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transform: scale(1);
+  text-align: center;
+}
+.ban-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* hover:scale-105 hover:shadow-lg */
+}
+/* Kiểu dáng cho thẻ ban được chọn */
+.ban-card.selected {
+  border-color: #3b82f6; /* border-blue-500 */
+  background-color: #eff6ff; /* bg-blue-50 */
+  box-shadow: 0 0 0 2px #3b82f6; /* ring-2 ring-blue-500 */
+}
+/* Kiểu dáng chung cho các input và textarea */
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1rem; /* px-4 py-3 */
+  background-color: #f9fafb; /* bg-gray-50 */
+  border: 1px solid #d1d5db; /* border-gray-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input-field:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px #3b82f6; /* focus:outline-none focus:ring-2 focus:ring-blue-500 */
+}
+textarea.input-field {
+  resize: vertical; /* Cho phép người dùng thay đổi kích thước theo chiều dọc */
+}
+/* Kiểu dáng cho nút Gửi */
+.submit-btn {
+  background-color: #2563eb; /* bg-blue-600 */
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem; /* py-3 px-6 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  transition: background-color 0.2s;
+  outline: none;
+}
+.submit-btn:hover {
+  background-color: #1d4ed8; /* hover:bg-blue-700 */
+}
+.submit-btn:focus {
+  box-shadow: 0 0 0 2px #3b82f6, 0 0 0 4px #bfdbfe; /* focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 */
+}
+/* Hiệu ứng chuyển động khi hiển thị các phần tử */
+.animated-scroll {
+  animation: fadeIn 1s forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f3f4f6;
+}
+.form-card {
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  max-width: 900px;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+.input-field {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  resize: vertical;
+}
+.input-field:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+  outline: none;
+}
+.ban-card,
+.sub-ban-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+}
+.ban-card:hover,
+.sub-ban-card:hover {
+  border-color: #60a5fa;
+  background-color: #eff6ff;
+  transform: translateY(-5px);
+}
+.ban-card.selected,
+.sub-ban-card.selected {
+  border-color: #2563eb;
+  background-color: #dbeafe;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.submit-btn {
+  background-color: #2563eb;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.submit-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+.animated-scroll {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.hidden {
+  display: none !important;
+}
+
+/* Mobile enhancements */
+@media (max-width: 640px) {
+  .form-card {
+    padding: 1.25rem;
+    max-width: 100%;
+    border-radius: 1rem;
+  }
+  .ban-card,
+  .sub-ban-card {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+  .submit-btn {
+    width: 100%;
+    padding: 1rem;
+  }
+  .grid.grid-cols-2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  .grid.grid-cols-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Header */
+.site-header {
+  width: 100%;
+  background: #111827;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.club-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+}
+.header-right {
+  display: flex;
+  gap: 1rem;
+}
+.nav-link {
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.nav-link:hover {
+  color: #2563eb;
+}
+
+/* Footer */
+.site-footer {
+  background: #111827;
+  color: #d1d5db;
+  padding: 1.25rem 0;
+  text-align: center;
+  margin-top: auto;
+}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.footer-text {
+  font-size: 0.9rem;
+}
+.footer-text a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+.footer-text a:hover {
+  text-decoration: underline;
+}
