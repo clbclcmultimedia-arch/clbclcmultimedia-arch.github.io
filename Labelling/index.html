@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dự Án: Hiện Tượng Dán Nhãn Trong Học Đường</title>
+    <!-- Tải Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Thiết lập font Inter và cấu hình Tailwind -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f7f9fc;
+        color: #1e293b;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "primary-blue": "#1d4ed8",
+              "secondary-gray": "#4b5563",
+              "accent-yellow": "#fcd34d",
+            },
+          },
+        },
+      };
+
+      // JavaScript cho hiệu ứng cuộn mượt và nút "Về đầu trang"
+      document.addEventListener("DOMContentLoaded", () => {
+        // Hiển thị nút 'scroll to top' khi cuộn xuống
+        const backToTopButton = document.getElementById("back-to-top");
+        window.onscroll = function () {
+          if (
+            document.body.scrollTop > 200 ||
+            document.documentElement.scrollTop > 200
+          ) {
+            backToTopButton.classList.remove("hidden");
+          } else {
+            backToTopButton.classList.add("hidden");
+          }
+        };
+
+        // Cuộn lên đầu trang khi click
+        backToTopButton.onclick = function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+      });
+    </script>
+  </head>
+  <body class="antialiased">
+    <!-- Thanh Điều Hướng (Header) -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold text-primary-blue">
+          Dự Án: Labelling Học Đường
+        </h1>
+        <a
+          href="#contact"
+          class="px-4 py-2 bg-primary-blue text-white rounded-lg shadow-lg hover:bg-blue-700 transition duration-300 font-medium text-sm"
+        >
+          Liên Hệ
+        </a>
+      </div>
+    </header>
+
+    <!-- Phần Giới Thiệu Chính -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <section
+        id="introduction"
+        class="text-center mb-16 p-8 bg-white rounded-xl shadow-xl"
+      >
+        <h2
+          class="text-4xl sm:text-5xl font-extrabold text-secondary-gray mb-4 leading-tight"
+        >
+          Tìm Hiểu về Hiện Tượng Dán Nhãn (Labelling)
+        </h2>
+        <p class="text-xl text-primary-blue font-semibold mt-6">
+          Trang web này sẽ giúp các bạn hiểu thêm về hiện tượng
+          <span class="text-accent-yellow font-bold">dán nhãn (labelling)</span>
+          trong môi trường học đường, thông qua các khái niệm cơ bản và dữ liệu
+          khảo sát thực tế.
+        </p>
+      </section>
+
+      <!-- Phần Nội Dung Chính -->
+      <div class="grid md:grid-cols-2 gap-10">
+        <!-- Khái Niệm Dán Nhãn -->
+        <div
+          id="concept"
+          class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-primary-blue"
+        >
+          <h3
+            class="text-2xl font-bold mb-4 text-primary-blue flex items-center"
+          >
+            <!-- Icon sách -->
+            <svg
+              class="w-6 h-6 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.208 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.792 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.792 5 16.5 5S19.832 5.477 21 6.253v13C19.832 18.477 18.208 18 16.5 18s-3.332.477-4.5 1.253"
+              ></path>
+            </svg>
+            1. Khái Niệm Dán Nhãn (Labelling)
+          </h3>
+          <div class="text-secondary-gray space-y-4 text-justify">
+            <p>
+              Trong xã hội học, dán nhãn (labelling) được hiểu là quá trình xã
+              hội mà trong đó cộng đồng hoặc các thiết chế quyền lực gắn cho cá
+              nhân/nhóm một định danh, nhằm phân biệt họ với chuẩn mực chung của
+              xã hội.
+            </p>
+            <p>
+              Việc dán nhãn không chỉ phản ánh ranh giới pháp lý, mà còn thỏa
+              mãn nhu cầu tập thể trong việc xác định đâu là hành vi/đặc điểm
+              được chấp nhận và đâu là hành vi/đặc điểm bị loại trừ (Durkheim,
+              1897).
+            </p>
+            <p>
+              Theo Hardman và cộng sự (1999), dán nhãn là quá trình xã hội sử
+              dụng các mô tả để xác định những người khác biệt đáng kể so với
+              chuẩn mực.
+            </p>
+          </div>
+        </div>
+
+        <!-- Kết Quả Khảo Sát -->
+        <div
+          id="survey-results"
+          class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-accent-yellow"
+        >
+          <h3
+            class="text-2xl font-bold mb-4 text-primary-blue flex items-center"
+          >
+            <!-- Icon biểu đồ -->
+            <svg
+              class="w-6 h-6 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0h6"
+              ></path>
+            </svg>
+            2. Kết Quả Khảo Sát Sơ Bộ
+          </h3>
+          <div class="text-secondary-gray space-y-4">
+            <p class="font-semibold">
+              Khảo sát về mức độ trải nghiệm và tác động của hiện tượng dán nhãn
+              ở học sinh cho thấy:
+            </p>
+            <ul class="list-disc list-inside space-y-2 ml-4">
+              <li
+                class="p-2 rounded-lg bg-blue-50 border-l-4 border-primary-blue"
+              >
+                Mức độ <span class="font-bold">trải nghiệm dán nhãn</span> khá
+                cao:
+                <span class="font-extrabold text-primary-blue">ĐTB = 3,98</span
+                >.
+              </li>
+              <li
+                class="p-2 rounded-lg bg-yellow-50 border-l-4 border-accent-yellow"
+              >
+                <span class="font-bold">Tác động tổng thể</span> ghi nhận mức
+                thấp hơn:
+                <span class="font-extrabold text-accent-yellow">ĐTB = 3,39</span
+                >.
+              </li>
+              <li
+                class="p-2 rounded-lg bg-blue-50 border-l-4 border-primary-blue"
+              >
+                Các khía cạnh khác như:
+                <ul class="mt-1 ml-4 list-none">
+                  <li>
+                    - Nhận thức và cảm xúc:
+                    <span class="font-medium">3,53</span>
+                  </li>
+                  <li>
+                    - Động lực học tập: <span class="font-medium">3,48</span>
+                  </li>
+                  <li>
+                    - Quan hệ xã hội: <span class="font-medium">3,55</span>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <p class="text-sm italic pt-2">
+              Các số liệu này phản ánh việc dán nhãn không chỉ hiện hữu rõ ràng
+              mà còn ảnh hưởng đa chiều đến cảm xúc, hành vi và năng lực phục
+              hồi của học sinh.
+            </p>
+
+            <!-- Hình ảnh minh họa -->
+            <div class="mt-6 border-t pt-4 border-gray-100">
+              <img
+                src="z7138077390571_ba9f0170be8a2dc19a071f69dcc05f0d.jpg"
+                alt="Hình ảnh minh họa kết quả khảo sát"
+                class="w-full h-auto rounded-lg shadow-md object-cover"
+                onerror="this.onerror=null; this.src='https://placehold.co/400x200?text=L%E1%BB%96I+T%E1%BA%A2I+%E1%BA%A2NH'"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Phần Liên Hệ (Footer) -->
+    <footer id="contact" class="bg-secondary-gray text-white mt-16 p-8">
+      <div class="max-w-7xl mx-auto text-center">
+        <h3 class="text-2xl font-bold mb-4 text-accent-yellow">
+          Liên Hệ Với Chúng Tôi
+        </h3>
+        <p class="mb-6">
+          Nếu bạn có bất kỳ câu hỏi hoặc muốn đóng góp cho dự án nghiên cứu này,
+          vui lòng liên hệ theo thông tin dưới đây:
+        </p>
+
+        <div class="space-y-3 font-light">
+          <p class="flex items-center justify-center">
+            <!-- Icon Email -->
+            <svg
+              class="w-5 h-5 mr-2 text-primary-blue"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+              ></path>
+              <path
+                d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+              ></path>
+            </svg>
+            Email: contact.duanlabelling@email.com
+          </p>
+          <p class="flex items-center justify-center">
+            <!-- Icon Điện thoại -->
+            <svg
+              class="w-5 h-5 mr-2 text-primary-blue"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74A1 1 0 0118 16.847V18a2 2 0 01-2 2H4a2 2 0 01-2-2V4z"
+              ></path>
+            </svg>
+            Điện thoại: (84) 123 456 789
+          </p>
+          <p class="text-sm pt-4 opacity-75">
+            &copy; 2025 Dự Án Labelling Học Đường. Bảo lưu mọi quyền.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Nút "Về Đầu Trang" -->
+    <button
+      id="back-to-top"
+      class="hidden fixed bottom-5 right-5 p-3 bg-primary-blue text-white rounded-full shadow-lg hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary-blue focus:ring-offset-2"
+    >
+      <!-- Icon Mũi tên lên -->
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 10l7-7m0 0l7 7m-7-7v18"
+        ></path>
+      </svg>
+    </button>
+  </body>
+</html>
