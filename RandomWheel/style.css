@@ -1,0 +1,231 @@
+/* Màu sắc rạp xiếc */
+:root {
+  --circus-red: #e84855;
+  --circus-yellow: #ffd23f;
+  --circus-blue: #3e88ad;
+  --circus-white: #ffffff;
+  --circus-dark: #333333;
+  --trans-bg: rgba(255, 255, 255, 0.7); /* Nền trong suốt cho info box */
+  --trans-border: rgba(232, 72, 85, 0.5); /* Viền trong suốt */
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  /* Thêm ảnh nền bia.png vào đây */
+  background-image: url("bia.png"); /* Đổi tên file nếu cần */
+  background-size: cover; /* Đảm bảo ảnh nền phủ kín */
+  background-position: center;
+  background-attachment: fixed; /* Giữ ảnh cố định khi cuộn */
+  /* --- */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; /* Cần thiết để các info box nằm trên nền */
+}
+
+/* --- Vòng Quay (Wheel) --- */
+.wheel-area {
+  position: relative;
+  width: 600px; /* Tăng kích thước vòng quay */
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+/* Vòng quay bằng SVG */
+.wheel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.wheel svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); /* Bắt đầu từ vị trí 12h */
+}
+
+.segment-text {
+  font-size: 14px;
+  font-weight: bold;
+  fill: white;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.indicator {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid var(--circus-blue);
+  z-index: 10;
+}
+
+.spin-btn {
+  position: absolute;
+  bottom: -80px;
+  padding: 15px 30px;
+  font-size: 1.5em;
+  font-weight: bold;
+  background-color: var(--circus-yellow);
+  color: var(--circus-red);
+  border: 5px solid var(--circus-red);
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 0 var(--circus-dark);
+  transition: all 0.1s;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.spin-btn:active {
+  box-shadow: 0 2px 0 var(--circus-dark);
+  transform: translateY(6px);
+}
+
+/* --- Info Boxes ở các góc --- */
+.info-box {
+  position: absolute;
+  background-color: var(--trans-bg);
+  border: 3px solid var(--trans-border);
+  border-radius: 10px;
+  padding: 15px;
+  width: 280px;
+  max-height: 30vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+.info-box h2 {
+  color: var(--circus-blue);
+  border-bottom: 2px dashed var(--circus-red);
+  padding-bottom: 5px;
+  margin-top: 0;
+  font-size: 1.3em;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-list li {
+  padding: 6px 0;
+  border-bottom: 1px dotted rgba(51, 51, 51, 0.5);
+  font-size: 0.95em;
+  color: var(--circus-dark);
+}
+
+.info-list li:last-child {
+  border-bottom: none;
+}
+
+.prize-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prize-list span {
+  font-weight: bold;
+  color: var(--circus-red);
+  font-size: 1.1em;
+}
+
+.out-of-stock {
+  opacity: 0.6;
+  text-decoration: line-through;
+  color: var(--circus-dark);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .wheel-area {
+    width: 500px;
+    height: 500px;
+  }
+  .spin-btn {
+    font-size: 1.3em;
+    padding: 12px 25px;
+    bottom: -70px;
+  }
+  .info-box {
+    width: 250px;
+    padding: 12px;
+  }
+  .info-box h2 {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 50px;
+  }
+  .wheel-area {
+    width: 350px;
+    height: 350px;
+    margin-bottom: 60px;
+  }
+  .spin-btn {
+    bottom: -50px;
+    font-size: 1.1em;
+    padding: 10px 20px;
+  }
+  .info-box {
+    position: static;
+    width: 90%;
+    max-width: 400px;
+    margin: 10px auto;
+    max-height: 20vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .wheel-area {
+    width: 280px;
+    height: 280px;
+  }
+  .spin-btn {
+    font-size: 1em;
+    padding: 8px 15px;
+  }
+  .info-box {
+    font-size: 0.9em;
+    width: 95%;
+  }
+}
