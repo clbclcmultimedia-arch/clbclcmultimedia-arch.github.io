@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>PRE-ORDER MATCHA - Floricha</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <header class="site-header">
+      <div class="header-container">
+        <div class="header-left">
+          <span class="club-name text-white text-xl font-bold"
+            >Floricha's Pre-Order</span
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="flex flex-col items-center p-4 md:p-8 flex-grow">
+      <div class="form-card my-8">
+        <form
+          id="order-form"
+          class="animated-scroll space-y-8"
+          action="https://usebasin.com/f/994fa18a9cd1"
+          method="POST"
+        >
+          <div class="text-center">
+            <h1 class="text-3xl font-bold mb-2 text-matcha-green">
+              PRE-ORDER MATCHA
+            </h1>
+            <p class="text-sm italic text-gray-500 mt-4">
+              Vui lòng điền đầy đủ thông tin (*)
+            </p>
+          </div>
+
+          <div
+            class="space-y-6 p-6 bg-white border border-gray-300 rounded-lg shadow-sm"
+          >
+            <div class="form-group">
+              <label
+                for="full-name"
+                class="block text-md font-medium text-gray-700"
+                >Họ và tên *</label
+              >
+              <input
+                type="text"
+                id="full-name"
+                name="Họ và tên"
+                class="input-field"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="block text-md font-medium text-gray-700"
+                >Hình thức Trả đơn *</label
+              >
+              <div class="space-y-2">
+                <label class="radio-label">
+                  <input
+                    type="radio"
+                    name="Hình thức Trả đơn"
+                    value="Học sinh chuyên (trả đơn vào Club Fair - chiều thứ 6)"
+                    class="radio-input"
+                    required
+                  />
+                  Học sinh chuyên (trả đơn vào Club Fair - chiều thứ 6)
+                </label>
+                <label class="radio-label">
+                  <input
+                    type="radio"
+                    name="Hình thức Trả đơn"
+                    value="Trả đơn vào chiều thứ 7 (1-5 giờ)"
+                    class="radio-input"
+                  />
+                  Trả đơn vào chiều thứ 7 (1-5 giờ)
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label
+                for="delivery-address"
+                class="block text-md font-medium text-gray-700"
+                >Địa chỉ/ Lớp (nếu là hs chuyên) *</label
+              >
+              <input
+                type="text"
+                id="delivery-address"
+                name="Địa chỉ/ Lớp"
+                class="input-field"
+                required
+              />
+            </div>
+          </div>
+
+          <div
+            class="space-y-6 p-6 bg-white border border-gray-300 rounded-lg shadow-sm"
+          >
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">
+              Chọn món Matcha yêu thích *
+            </h3>
+
+            <div id="product-list" class="product-grid">
+              <div class="product-item" data-price="35000">
+                <div class="product-image-container">
+                  <img
+                    src="CreamySaltMatcha.png"
+                    alt="Creamy Salt Matcha"
+                    class="product-image"
+                  />
+                </div>
+                <div class="product-info-content">
+                  <div class="flex items-center justify-between mb-2">
+                    <label
+                      for="product-1"
+                      class="text-gray-700 font-medium text-base leading-tight"
+                      >Creamy Salt Matcha</label
+                    >
+                    <span class="price-tag">35k</span>
+                  </div>
+                  <p class="product-description">
+                    Matcha Kem Muối, topping kem muối béo nhẹ.
+                  </p>
+                  <div class="product-control">
+                    <input
+                      type="checkbox"
+                      id="product-1"
+                      name="Creamy Salt Matcha - Check"
+                      value="Creamy Salt Matcha - 35k"
+                      class="product-checkbox"
+                    />
+                    <input
+                      type="number"
+                      name="SL Creamy Salt Matcha"
+                      min="1"
+                      value="1"
+                      placeholder="SL"
+                      class="quantity-input"
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-item" data-price="32000">
+                <div class="product-image-container">
+                  <img
+                    src="PureMatcha.png"
+                    alt="Pure Matcha"
+                    class="product-image"
+                  />
+                </div>
+                <div class="product-info-content">
+                  <div class="flex items-center justify-between mb-2">
+                    <label
+                      for="product-2"
+                      class="text-gray-700 font-medium text-base leading-tight"
+                      >Pure Matcha</label
+                    >
+                    <span class="price-tag">32k</span>
+                  </div>
+                  <p class="product-description">
+                    Matcha Latte - Vị matcha đậm, sữa mượt.
+                  </p>
+                  <div class="product-control">
+                    <input
+                      type="checkbox"
+                      id="product-2"
+                      name="Pure Matcha - Check"
+                      value="Pure Matcha - 32k"
+                      class="product-checkbox"
+                    />
+                    <input
+                      type="number"
+                      name="SL Pure Matcha"
+                      min="1"
+                      value="1"
+                      placeholder="SL"
+                      class="quantity-input"
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-item" data-price="35000">
+                <div class="product-image-container">
+                  <img
+                    src="TropicMatcha.png"
+                    alt="Tropic Matcha"
+                    class="product-image"
+                  />
+                </div>
+                <div class="product-info-content">
+                  <div class="flex items-center justify-between mb-2">
+                    <label
+                      for="product-3"
+                      class="text-gray-700 font-medium text-base leading-tight"
+                      >Tropic Matcha</label
+                    >
+                    <span class="price-tag">35k</span>
+                  </div>
+                  <p class="product-description">
+                    Coco matcha - Kem matcha nguyên chất hòa cùng nước dừa tươi.
+                  </p>
+                  <div class="product-control">
+                    <input
+                      type="checkbox"
+                      id="product-3"
+                      name="Tropic Matcha - Check"
+                      value="Tropic Matcha - 35k"
+                      class="product-checkbox"
+                    />
+                    <input
+                      type="number"
+                      name="SL Tropic Matcha"
+                      min="1"
+                      value="1"
+                      placeholder="SL"
+                      class="quantity-input"
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-item" data-price="35000">
+                <div class="product-image-container">
+                  <img
+                    src="HotSaltedCreamMatcha.png"
+                    alt="Hot Salted Cream Matcha"
+                    class="product-image"
+                  />
+                </div>
+                <div class="product-info-content">
+                  <div class="flex items-center justify-between mb-2">
+                    <label
+                      for="product-4"
+                      class="text-gray-700 font-medium text-base leading-tight"
+                      >Hot Salted Cream Matcha</label
+                    >
+                    <span class="price-tag">35k</span>
+                  </div>
+                  <p class="product-description">
+                    Matcha nóng kết hợp sữa mềm, kem muối, hương thơm rực rỡ.
+                  </p>
+                  <div class="product-control">
+                    <input
+                      type="checkbox"
+                      id="product-4"
+                      name="Hot Salted Cream Matcha - Check"
+                      value="Hot Salted Cream Matcha - 35k"
+                      class="product-checkbox"
+                    />
+                    <input
+                      type="number"
+                      name="SL Hot Salted Cream Matcha"
+                      min="1"
+                      value="1"
+                      placeholder="SL"
+                      class="quantity-input"
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="total-amount-container"
+              class="mt-4 text-lg font-bold text-gray-800 space-y-2"
+            >
+              <div class="flex justify-between items-center border-b pb-1">
+                <span>Tổng tiền (Chưa giảm):</span>
+                <span id="raw-total-display" class="font-medium text-gray-600"
+                  >0 VNĐ</span
+                >
+              </div>
+              <div
+                class="flex justify-between items-center text-sm italic text-red-500"
+                id="discount-row"
+                style="display: none"
+              >
+                <span>Ưu đãi <span id="discount-percent">(0%)</span>:</span>
+                <span id="discount-amount-display">- 0 VNĐ</span>
+              </div>
+              <div
+                class="flex justify-between items-center pt-2 border-t-2 border-matcha-green"
+              >
+                <span class="text-xl">Thành tiền cuối:</span>
+                <span
+                  id="calculated-total"
+                  class="text-matcha-green text-2xl font-extrabold"
+                  >0 VNĐ</span
+                >
+              </div>
+              <input
+                type="hidden"
+                name="Tổng tiền cuối cùng"
+                id="total-amount-input"
+                value="0 VNĐ"
+              />
+            </div>
+          </div>
+
+          <div
+            class="space-y-6 p-6 bg-white border border-gray-300 rounded-lg shadow-sm"
+          >
+            <label for="notes" class="block text-md font-medium text-gray-700"
+              >Ghi chú (Yêu cầu thêm đường/đá,...) *</label
+            >
+            <textarea
+              id="notes"
+              name="Ghi chú chi tiết"
+              class="input-field"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+
+          <div class="flex justify-center">
+            <button type="submit" class="submit-btn">Gửi đơn đặt hàng</button>
+          </div>
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="PRE-ORDER MATCHA Floricha"
+          />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://sites.google.com/view/clc-multimedia-tuyendung/trang-ch%E1%BB%A7"
+          />
+        </form>
+      </div>
+
+      <div
+        id="confirmation-section"
+        class="hidden form-card flex flex-col items-center text-center"
+      >
+        <div class="text-6xl text-green-500 mb-4">✅</div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">
+          Đơn hàng của bạn đã được ghi nhận!
+        </h2>
+        <p class="text-gray-600 mb-4">
+          Cảm ơn bạn đã ủng hộ Floricha. Chúng mình sẽ chuẩn bị đơn hàng theo
+          yêu cầu của bạn.
+        </p>
+        <button
+          onclick="window.location.reload()"
+          class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none"
+        >
+          Đặt thêm đơn
+        </button>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
