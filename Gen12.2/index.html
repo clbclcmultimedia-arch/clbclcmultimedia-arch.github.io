@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tuyển Thành Viên Gen 12.2 - CLC MULTIMEDIA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="flex flex-col items-center justify-center p-4 md:p-8 min-h-screen"
+  >
+    <div class="form-card my-8">
+      <div id="intro-section" class="mb-10 animated-scroll">
+        <div class="text-center mb-8">
+          <h1 class="text-3xl md:text-4xl font-bold text-teal-700 mb-2">
+            TTV Gen 12.2 CLC MULTIMEDIA
+          </h1>
+          <p class="text-gray-500 font-medium uppercase tracking-widest">
+            Câu hỏi Vòng đơn
+          </p>
+        </div>
+
+        <div class="prose max-w-none text-gray-700 leading-relaxed space-y-6">
+          <div class="bg-teal-50 p-6 rounded-xl border-l-4 border-teal-500">
+            <h2 class="text-xl font-bold text-teal-800 mb-3">
+              CƠ CẤU HOẠT ĐỘNG
+            </h2>
+            <p>
+              Chào mừng bạn đến với đợt tuyển Gen 12.2! Cơ cấu hoạt động của CLC
+              Multimedia bao gồm:
+            </p>
+          </div>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-3">
+              <h3 class="text-lg font-bold text-indigo-700">
+                I. Ban Điều Hành & Chuyên Môn
+              </h3>
+              <ul class="list-disc pl-5 space-y-2">
+                <li>
+                  <strong>Ban Chủ Nhiệm</strong>: Điều hành và quản lý toàn bộ
+                  hoạt động của CLB; giám sát các ban, nhóm dự án; quản lý ngân
+                  quỹ và kiểm soát thu - chi.
+                </li>
+                <li>
+                  <strong>Ban Báo Chí</strong>: Viết nội dung giới thiệu, quảng
+                  bá hoạt động/sự kiện; viết bài truyền thông, phỏng vấn và thu
+                  thập thông tin.
+                </li>
+                <li>
+                  <strong>Ban Đồ Hoạ</strong> (Design & Edit): Thiết kế, chỉnh
+                  sửa ảnh và video; tạo ấn phẩm truyền thông cho page, website,
+                  quảng cáo; vẽ minh hoạ, trang trí.
+                </li>
+                <li>
+                  <strong>Ban Nhiếp Ảnh</strong>: Chụp ảnh, quay phim và chỉnh
+                  sửa hình ảnh, video cho các hoạt động CLB.
+                </li>
+                <li>
+                  <strong>Ban Sự Kiện</strong>: Lên kế hoạch, xây dựng ý tưởng,
+                  chuẩn bị vật dụng và quản lý, điều phối sự kiện.
+                </li>
+              </ul>
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="text-lg font-bold text-indigo-700">II. Ban Hỗ Trợ</h3>
+              <ul class="list-disc pl-5 space-y-2">
+                <li>
+                  <strong>Ban Đối Nội</strong>: Tổ chức hoạt động nội bộ; quản
+                  lý nhân sự, thông báo thông tin; giải quyết mâu thuẫn và đánh
+                  giá thành viên định kỳ.
+                </li>
+                <li>
+                  <strong>Ban Đối Ngoại</strong>: Liên hệ đối tác, xin tài trợ;
+                  làm hồ sơ đối ngoại và lập dự trù, quản lý tài chính.
+                </li>
+                <li>
+                  <strong>Ban Hậu Cần</strong>: Chuẩn bị vật dụng, khảo sát giá,
+                  chọn địa điểm; set up - decor, hỗ trợ và kiểm kê sau sự kiện.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- <p class="italic text-sm text-gray-500 border-t pt-4 text-center">
+            * Chỉ cần có đam mê và nắm được một kỹ năng cơ bản – các kỹ năng còn
+            lại sẽ được đào tạo và rèn luyện trong quá trình hoạt động cùng CLB.
+          </p> -->
+        </div>
+
+        <div class="flex justify-center mt-10">
+          <button type="button" id="next-to-info-btn" class="submit-btn px-10">
+            Bắt đầu ứng tuyển
+          </button>
+        </div>
+      </div>
+
+      <form
+        id="recruitment-form"
+        class="hidden animated-scroll space-y-8"
+        action="https://usebasin.com/f/8d646d8e63ab"
+        method="POST"
+      >
+        <h2 class="text-2xl font-bold text-gray-800 text-center">
+          Thông tin cá nhân
+        </h2>
+
+        <div class="space-y-5 p-6 bg-gray-50 rounded-xl border border-gray-200">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1"
+                >Họ và tên</label
+              >
+              <input
+                type="text"
+                name="Họ và tên"
+                class="input-field"
+                placeholder="Nguyễn Văn A"
+                required
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1"
+                >Lớp</label
+              >
+              <input
+                type="text"
+                name="Lớp"
+                class="input-field"
+                placeholder="10 Toán"
+                required
+              />
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1"
+                >Số điện thoại</label
+              >
+              <input
+                type="tel"
+                name="Số điện thoại"
+                class="input-field"
+                required
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1"
+                >Email</label
+              >
+              <input type="email" name="Email" class="input-field" required />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1"
+              >Link Facebook cá nhân</label
+            >
+            <input
+              type="text"
+              name="Facebook"
+              class="input-field"
+              placeholder="https://facebook.com/..."
+              required
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2"
+              >Bạn hiểu thế nào về Câu Lạc Bộ CLC Multimedia?</label
+            >
+            <textarea
+              name="Câu hỏi chung"
+              class="input-field"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-xl font-bold text-teal-800 mb-6 text-center">
+            Chọn ban bạn muốn ứng tuyển
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="ban-card" data-ban="baochi">
+              <span class="text-3xl">✍️</span>
+              <span class="mt-2 font-bold">Báo chí</span>
+            </div>
+            <div class="ban-card" data-ban="sukien">
+              <span class="text-3xl">🎉</span>
+              <span class="mt-2 font-bold">Sự kiện</span>
+            </div>
+            <div class="ban-card" data-ban="haucan">
+              <span class="text-3xl">📦</span>
+              <span class="mt-2 font-bold">Hậu cần</span>
+            </div>
+            <div class="ban-card" data-ban="doingoai">
+              <span class="text-3xl">🤝</span>
+              <span class="mt-2 font-bold">Đối ngoại</span>
+            </div>
+            <div class="ban-card" data-ban="dohoa">
+              <span class="text-3xl">🎨</span>
+              <span class="mt-2 font-bold">Đồ hoạ</span>
+            </div>
+            <div class="ban-card" data-ban="photo">
+              <span class="text-3xl">📸</span>
+              <span class="mt-2 font-bold">Photo</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="questions-section" class="hidden space-y-8 pt-6 border-t">
+          <div id="ban-baochi-q" class="hidden space-y-6">
+            <h3 class="department-title">Câu hỏi Ban Báo chí</h3>
+            <div class="space-y-4">
+              <div>
+                <label class="q-label"
+                  >1. Theo bạn, vai trò của ban Báo chí trong một Câu lạc bộ
+                  Truyền thông là gì?</label
+                >
+                <textarea name="BC-Q1" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >2. Theo bạn, để trở thành thành viên của ban Báo chí cần có
+                  những phẩm chất, kỹ năng nào? Đâu là tiêu chí bạn cho là quan
+                  trọng nhất? Bản thân bạn đáp ứng được những tiêu chí
+                  nào?</label
+                >
+                <textarea name="BC-Q2" class="input-field" rows="4"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >3. Hãy nêu những yếu tố bạn cho là quan trọng cho một bài
+                  viết đủ thu hút.</label
+                >
+                <textarea name="BC-Q3" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >4. Bạn đã từng có kinh nghiệm viết bài truyền thông hay chưa?
+                  Khi viết bài truyền thông, bạn thường lên ý tưởng như thế
+                  nào?</label
+                >
+                <textarea name="BC-Q4" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >5. Bạn hãy viết một bài truyền thông ngắn tùy ý về một sự
+                  kiện mà CLC Multimedia đã tổ chức.</label
+                >
+                <textarea
+                  name="BC-Q5"
+                  class="input-field"
+                  rows="6"
+                  placeholder="Viết bài tại đây..."
+                ></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >6. Bạn tự đánh giá khả năng viết của mình ở mức nào?</label
+                >
+                <select name="BC-Q6" class="input-field">
+                  <option value="">-- Chọn mức độ --</option>
+                  <option value="Bình thường">Bình thường</option>
+                  <option value="Tốt">Tốt</option>
+                  <option value="Khá tốt">Khá tốt</option>
+                  <option value="Xuất sắc">Xuất sắc</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div id="ban-sukien-q" class="hidden space-y-6">
+            <h3 class="department-title">Câu hỏi Ban Sự kiện</h3>
+            <div class="space-y-4">
+              <div>
+                <label class="q-label"
+                  >1. Bạn hiểu như thế nào về vai trò của ban sự kiện trong câu
+                  lạc bộ?</label
+                >
+                <textarea name="SK-Q1" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >2. Việc xây dựng ý tưởng cho bài đăng thường xuất phát từ
+                  đâu, nguồn để xây dựng ý tưởng đó là gì?</label
+                >
+                <textarea name="SK-Q2" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >3. Điều quyết định sự thu hút cho 1 bài đăng là gì?</label
+                >
+                <textarea name="SK-Q3" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >4. Đặt cương vị là 1 học sinh, 1 bài đăng như thế nào có thể
+                  thu hút bạn?</label
+                >
+                <textarea name="SK-Q4" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >5. Trong thời gian ngắn cần phải hoàn thiện deadline mà trùng
+                  với thời điểm bạn bận ôn thi, bạn sẽ xử lý tình huống như thế
+                  nào?</label
+                >
+                <textarea name="SK-Q5" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >6. Nếu có thành viên trong ban làm trùng chủ đề với bạn, bạn
+                  sẽ xử lý như nào để tránh gây hiểu lầm?</label
+                >
+                <textarea name="SK-Q6" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >7. Nếu bạn được giao chủ đề và được yêu cầu phải khai thác về
+                  nó mặc dù đang bí ý tưởng, bạn sẽ làm gì?</label
+                >
+                <textarea name="SK-Q7" class="input-field" rows="3"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div id="ban-haucan-q" class="hidden space-y-6">
+            <h3 class="department-title">Câu hỏi Ban Hậu cần</h3>
+            <div class="space-y-4">
+              <div>
+                <label class="q-label"
+                  >1. Để trở thành thành viên ban hậu cần thì cần có những yếu
+                  tố gì?</label
+                >
+                <textarea name="HC-Q1" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >2. Theo bạn vai trò của ban hậu cần trong mỗi sự kiện là
+                  gì?</label
+                >
+                <textarea name="HC-Q2" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >3. Trong ngày diễn ra sự kiện bạn phát hiện lạc đồ của nhà
+                  tài trợ khi thời gian còn ít, bạn xử lý thế nào?</label
+                >
+                <textarea name="HC-Q3" class="input-field" rows="4"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >4. Nếu chẳng may làm rơi tiền được giao để mua đồ cho CLB,
+                  bạn sẽ xử lý ra sao?</label
+                >
+                <textarea name="HC-Q4" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >5. Xử lý tình huống mâu thuẫn nội bộ giữa 2 thành viên trong
+                  nhóm dẫn đến xin rời CLB?</label
+                >
+                <textarea name="HC-Q5" class="input-field" rows="4"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div id="ban-doingoai-q" class="hidden space-y-6">
+            <h3 class="department-title">Câu hỏi Ban Đối ngoại</h3>
+            <div class="space-y-4">
+              <div>
+                <label class="q-label"
+                  >1. Theo em, khi trở thành thành viên của ban đối ngoại cần
+                  làm những công việc gì?</label
+                >
+                <textarea name="DN-Q1" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >2. Tại sao em lại lựa chọn trở thành thành viên ban Đối
+                  ngoại?</label
+                >
+                <textarea name="DN-Q2" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >3. Theo em, là một thành viên ban Đối Ngoại thì cần có kĩ
+                  năng gì?</label
+                >
+                <textarea name="DN-Q3" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >4. Quan điểm của em về ý kiến: "Chỉ những bạn có điều kiện
+                  mới có thể vào ban Đối ngoại"?</label
+                >
+                <textarea name="DN-Q4" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >5. Nếu có người phản ánh cách xin tài trợ của em chưa khéo
+                  léo, em sẽ xử lý thế nào?</label
+                >
+                <textarea name="DN-Q5" class="input-field" rows="3"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div id="ban-dohoa-q" class="hidden space-y-6">
+            <h3 class="department-title">Ban Đồ hoạ (Design – Edit)</h3>
+
+            <div
+              class="bg-teal-50 p-4 rounded-lg border-l-4 border-teal-500 mb-6"
+            >
+              <p class="font-bold text-teal-800 mb-4">
+                I. CÂU HỎI CHUNG (Bắt buộc)
+              </p>
+              <div class="space-y-4">
+                <div>
+                  <label class="q-label"
+                    >1. Theo bạn, ban Đồ Hoạ đóng vai trò như thế nào trong việc
+                    xây dựng hình ảnh và tinh thần của một Câu lạc bộ Truyền
+                    thông?</label
+                  >
+                  <textarea
+                    name="DH-Chung-Q1"
+                    class="input-field"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <div>
+                  <label class="q-label">2. Bạn muốn thử sức ở mảng nào?</label>
+                  <div
+                    class="grid grid-cols-1 md:grid-cols-3 gap-3"
+                    id="dohoa-sub-options"
+                  >
+                    <div class="sub-ban-card" data-option="design">
+                      🎨 Design
+                    </div>
+                    <div class="sub-ban-card" data-option="edit">
+                      🎬 Edit Video
+                    </div>
+                    <div class="sub-ban-card" data-option="both">✨ Cả hai</div>
+                  </div>
+                  <input
+                    type="hidden"
+                    name="DH-Mang-Chon"
+                    id="dh-mang-chon-input"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="dh-design-only"
+              class="hidden space-y-4 bg-white p-4 border rounded-xl shadow-sm"
+            >
+              <p class="font-bold text-indigo-700 underline">
+                II. DÀNH CHO DESIGN
+              </p>
+              <div>
+                <label class="q-label"
+                  >1. Khi nhận một brief thiết kế, bạn thường triển khai theo
+                  những bước nào? Bạn quen dùng công cụ gì?</label
+                >
+                <textarea
+                  name="DH-Design-Q1"
+                  class="input-field"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >2. Khi bí ý tưởng, bạn làm gì để “kích hoạt” lại cảm hứng
+                  sáng tạo?</label
+                >
+                <textarea
+                  name="DH-Design-Q2"
+                  class="input-field"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >3. Theo bạn, điều gì khiến một thiết kế trở nên "đúng – đủ –
+                  chạm"?</label
+                >
+                <textarea
+                  name="DH-Design-Q3"
+                  class="input-field"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >4. Chia sẻ 1–3 sản phẩm thể hiện rõ nhất cá tính của bạn
+                  (Link hoặc mô tả):</label
+                >
+                <textarea
+                  name="DH-Design-Q4"
+                  class="input-field"
+                  rows="3"
+                ></textarea>
+              </div>
+            </div>
+
+            <div
+              id="dh-edit-only"
+              class="hidden space-y-4 bg-white p-4 border rounded-xl shadow-sm"
+            >
+              <p class="font-bold text-indigo-700 underline">
+                III. DÀNH CHO EDIT VIDEO
+              </p>
+              <div>
+                <label class="q-label"
+                  >1. Bạn thường sử dụng phần mềm nào để dựng video? Mỗi phần
+                  mềm dùng cho mục đích gì?</label
+                >
+                <textarea
+                  name="DH-Edit-Q1"
+                  class="input-field"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >2. Yếu tố nào quyết định một video cuốn hút ngay từ những
+                  giây đầu tiên?</label
+                >
+                <textarea
+                  name="DH-Edit-Q2"
+                  class="input-field"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >3. Bạn từng dựng những dạng video nào? Dạng nào bạn tự tin
+                  nhất?</label
+                >
+                <textarea
+                  name="DH-Edit-Q3"
+                  class="input-field"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >4. Hãy gửi 2–3 sản phẩm video bạn tâm đắc nhất (Link hoặc mô
+                  tả):</label
+                >
+                <textarea
+                  name="DH-Edit-Q4"
+                  class="input-field"
+                  rows="3"
+                ></textarea>
+              </div>
+            </div>
+
+            <div
+              id="dh-both-only"
+              class="hidden space-y-4 bg-white p-4 border rounded-xl shadow-sm"
+            >
+              <p class="font-bold text-indigo-700 underline">
+                IV. DÀNH CHO CẢ HAI (DESIGN & EDIT)
+              </p>
+              <div>
+                <label class="q-label"
+                  >1. Khi bắt đầu một sản phẩm, bạn thường ưu tiên suy nghĩ về
+                  điều gì đầu tiên?</label
+                >
+                <textarea
+                  name="DH-Both-Q1"
+                  class="input-field"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >2. Nguồn cảm hứng sáng tạo của bạn thường đến từ đâu?</label
+                >
+                <textarea
+                  name="DH-Both-Q2"
+                  class="input-field"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >3. Yếu tố cốt lõi giúp sản phẩm vừa truyền tải thông điệp tốt
+                  vừa tạo ấn tượng?</label
+                >
+                <textarea
+                  name="DH-Both-Q3"
+                  class="input-field"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >4. Chia sẻ 2–3 sản phẩm (thiết kế hoặc video) bạn tâm đắc
+                  nhất:</label
+                >
+                <textarea
+                  name="DH-Both-Q4"
+                  class="input-field"
+                  rows="3"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div id="ban-photo-q" class="hidden space-y-6">
+            <h3 class="department-title">Ban Photo</h3>
+            <div class="space-y-4">
+              <div>
+                <label class="q-label"
+                  >1. Tại sao bạn lựa chọn trở thành thành viên của ban
+                  Photo?</label
+                >
+                <textarea name="PT-Q1" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >2. Theo bạn, một bức ảnh có cảm xúc được tạo nên từ những yếu
+                  tố nào?</label
+                >
+                <textarea name="PT-Q2" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >3. Nếu phải chụp sự kiện thiếu sáng và không có flash, bạn xử
+                  lý thế nào?</label
+                >
+                <textarea name="PT-Q3" class="input-field" rows="3"></textarea>
+              </div>
+              <div>
+                <label class="q-label"
+                  >4. Hãy gửi 3 tấm ảnh bạn tâm đắc nhất do chính bạn tự chụp và
+                  chỉnh sửa:</label
+                >
+                <input
+                  type="text"
+                  name="PT-Q4"
+                  class="input-field"
+                  placeholder="Link Google Drive, Facebook, Instagram..."
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-10">
+            <label class="q-label"
+              >Bạn có mong muốn hay góp ý gì thêm cho CLB không?</label
+            >
+            <textarea name="Góp ý" class="input-field" rows="3"></textarea>
+            <button type="submit" class="submit-btn w-full mt-8 py-4 text-xl">
+              Gửi đơn ứng tuyển
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div
+        id="confirmation-section"
+        class="hidden flex flex-col items-center text-center p-10"
+      >
+        <div class="text-7xl mb-4">🚀</div>
+        <h2 class="text-2xl font-bold text-teal-800 mb-2">
+          Gửi đơn thành công!
+        </h2>
+        <p class="text-gray-600">
+          Hẹn sớm gặp lại bạn tại gia đình CLC Multimedia Gen 12.2!
+        </p>
+      </div>
+    </div>
+
+    <footer class="mt-8 text-gray-500 text-sm">
+      © 2025 CLC Multimedia | Gen 12.2 Recruitment
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
