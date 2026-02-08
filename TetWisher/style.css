@@ -1,304 +1,137 @@
 body {
   background-color: #b30000;
-
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-
   color: #fff;
-
   margin: 0;
-
   display: flex;
-
   justify-content: center;
-
   overflow-x: hidden;
 }
 
 .container {
   text-align: center;
-
   padding: 20px;
 }
 
 #tree-container {
   position: relative;
-
   display: inline-block;
-
   margin-top: 10px;
-
   cursor: crosshair;
-
   user-select: none;
 }
 
 #peach-tree {
   max-width: 95vw;
-
   max-height: 80vh;
-
   border: 3px solid #ffd700;
-
   border-radius: 10px;
-
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Đồng xu nhỏ xinh */
-
-.coin {
-  position: absolute;
-
-  width: 20px;
-
-  height: 20px;
-
-  background: radial-gradient(circle, #ffec8b, #ffd700, #b8860b);
-
-  border-radius: 50%;
-
-  border: 1px solid #fff;
-
-  cursor: pointer;
-
-  box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
-
-  animation: pulse 2s infinite;
-
-  transform: translate(-50%, -50%); /* Giúp tâm đồng xu trùng điểm click */
-
-  z-index: 10;
-}
-
-@keyframes pulse {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-
-    box-shadow: 0 0 5px #ffd700;
-  }
-
-  50% {
-    transform: translate(-50%, -50%) scale(1.2);
-
-    box-shadow: 0 0 15px #ffd700;
-  }
-
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-
-    box-shadow: 0 0 5px #ffd700;
-  }
-}
-
-@keyframes swing {
-  0%,
-  100% {
-    transform: translate(-50%, -50%) rotate(-10deg);
-  }
-
-  50% {
-    transform: translate(-50%, -50%) rotate(10deg);
-  }
-}
-
+/* Các vật phẩm trang trí chung */
 .item {
   position: absolute;
-
   cursor: pointer;
-
   z-index: 10;
-
   transform: translate(-50%, -50%);
-
   transition: transform 0.2s;
+  /* Vùng đệm tàng hình giúp dễ bấm trên điện thoại */
+  padding: 10px;
 }
 
 .item:hover {
-  transform: translate(-50%, -50%) scale(2); /* Phóng to nhẹ khi di chuột vào để dễ click */
+  transform: translate(-50%, -50%) scale(2);
 }
 
-/* 1. Đồng xu (Siêu nhỏ) */
-
+/* 1. Đồng xu (Xu vàng) */
 .item-coin {
   width: 8px;
-
   height: 8px;
-
-  background: radial-gradient(circle, #ffec8b, #ffd700);
-
+  background: radial-gradient(circle, #ffec8b, #ffd700, #b8860b);
   border-radius: 50%;
-
   border: 0.5px solid #fff;
-
-  box-shadow: 0 0 3px gold;
+  box-shadow: 0 0 5px gold;
 }
 
-/* 2. Bao Lì xì */
-
-/* 2. Bao Lì xì - Cập nhật lại để không bị trôi */
+/* 2. Bao Lì xì (Sửa lỗi trôi ảnh) */
 .item-lixi {
   width: 8px;
-  height: 12px;
-  background-color: #d40000; /* Màu đỏ thẫm */
-  border: 1px solid #ffd700; /* Viền vàng */
+  height: 11px;
+  background-color: #ff0000;
+  border: 1px solid #ffd700;
   border-radius: 1px;
-  position: absolute;
-  /* Tạo hình thoi nhỏ ở giữa thay cho emoji để tránh lỗi trôi ảnh */
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.item-lixi::before {
-  content: "";
-  width: 3px;
-  height: 3px;
-  background: #ffd700;
-  transform: rotate(45deg);
-}
-
 .item-lixi::after {
   content: "🧧";
-
-  font-size: 6px;
-
-  position: absolute;
-
-  top: -2px;
-
-  left: -1px;
+  font-size: 7px;
+  line-height: 1;
+  display: block;
 }
 
-/* 3. Dây ruy băng lấp lánh */
-
+/* 3. Dây ruy băng */
 .item-ribbon {
   width: 2px;
-
   height: 12px;
-
   background: linear-gradient(to bottom, #ff0000, #ff69b4);
-
-  box-shadow: 0 0 5px #fff;
-
+  box-shadow: 0 0 4px #fff;
   animation: swing 2s infinite ease-in-out;
 }
 
-/* 4. Đèn lồng nhỏ */
-
+/* 4. Đèn lồng */
 .item-lantern {
   width: 9px;
-
   height: 9px;
-
   background: #ff4500;
-
   border-radius: 3px;
-
   box-shadow: 0 0 8px #ff4500;
+  border: 0.5px solid gold;
+}
+
+@keyframes swing {
+  0%, 100% { transform: translate(-50%, -50%) rotate(-15deg); }
+  50% { transform: translate(-50%, -50%) rotate(15deg); }
 }
 
 /* Modals */
-
 .modal {
   display: none;
-
   position: fixed;
-
   z-index: 100;
-
-  left: 0;
-
-  top: 0;
-
-  width: 100%;
-
-  height: 100%;
-
+  left: 0; top: 0; width: 100%; height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal-content {
   background: #fff;
-
   color: #333;
-
   margin: 15vh auto;
-
-  padding: 25px;
-
-  width: 80%;
-
-  max-width: 350px;
-
+  padding: 20px;
+  width: 85%;
+  max-width: 320px;
   border-radius: 15px;
-
   border: 4px solid #ffd700;
-
   text-align: center;
 }
 
-.display-box {
-  background: #fdf5e6;
-
-  border: 5px double #b30000;
-}
-
-#wish-text {
-  font-size: 1.2rem;
-
-  color: #b30000;
-
-  font-weight: bold;
-
-  line-height: 1.5;
-}
+.item-selector { margin-bottom: 15px; }
+.options { display: flex; justify-content: space-between; font-size: 0.8rem; }
+.options label { cursor: pointer; }
 
 textarea {
-  width: 100%;
-
-  height: 100px;
-
-  margin: 15px 0;
-
-  border-radius: 8px;
-
-  padding: 10px;
-
-  box-sizing: border-box;
-
-  border: 1px solid #ccc;
+  width: 100%; height: 80px;
+  margin: 10px 0; border-radius: 8px;
+  padding: 10px; box-sizing: border-box;
 }
 
 button {
-  background: #b30000;
-
-  color: gold;
-
-  border: 1px solid gold;
-
-  padding: 10px 20px;
-
-  cursor: pointer;
-
-  font-weight: bold;
-
-  border-radius: 5px;
+  background: #b30000; color: gold;
+  border: 1px solid gold; padding: 8px 15px;
+  cursor: pointer; font-weight: bold; border-radius: 5px;
 }
 
-button:hover {
-  background: #d40000;
-}
-
-.item-selector {
-  margin-bottom: 10px;
-
-  font-size: 0.9rem;
-}
-
-.options {
-  display: flex;
-
-  justify-content: space-around;
-
-  margin-top: 5px;
-}
+.display-box { background: #fdf5e6; border: 5px double #b30000; }
+#wish-text { font-size: 1.1rem; color: #b30000; font-weight: bold; }
