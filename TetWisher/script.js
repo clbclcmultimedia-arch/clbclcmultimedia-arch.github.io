@@ -1,16 +1,10 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import {
-  getDatabase,
-  ref,
-  push,
-  onValue,
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAqKQzCb78UGXRV44KFWt3SWqbpgmk-OU0",
   authDomain: "tetwishes.firebaseapp.com",
-  databaseURL:
-    "https://tetwishes-default-rtdb.asia-southeast1.firebasedatabase.app",
+  databaseURL: "https://tetwishes-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "tetwishes",
   storageBucket: "tetwishes.firebasestorage.app",
   messagingSenderId: "1096975912837",
@@ -28,8 +22,9 @@ const displayModal = document.getElementById("display-modal");
 const wishInput = document.getElementById("wish-input");
 let tempCoords = { x: 0, y: 0 };
 
-// 1. Lắng nghe dữ liệu - SỬA LỖI QUERYSELECTOR
+// 1. Hiển thị dữ liệu từ Firebase
 onValue(wishesRef, (snapshot) => {
+  // Xóa tất cả vật phẩm cũ có class .item để vẽ lại bản mới nhất
   const existingItems = treeContainer.querySelectorAll(".item");
   existingItems.forEach((item) => item.remove());
 
@@ -41,7 +36,7 @@ onValue(wishesRef, (snapshot) => {
   }
 });
 
-// 2. Mở modal khi click
+// 2. Click cây để chọn vị trí
 treeContainer.addEventListener("click", (e) => {
   if (e.target.id === "peach-tree") {
     const rect = treeContainer.getBoundingClientRect();
@@ -51,18 +46,17 @@ treeContainer.addEventListener("click", (e) => {
   }
 });
 
-// 3. Lưu lời chúc
+// 3. Lưu lời chúc và loại vật phẩm
 window.saveWish = function () {
   const text = wishInput.value.trim();
-  const radioChecked = document.querySelector('input[name="itemType"]:checked');
-  const selectedType = radioChecked ? radioChecked.value : "coin";
+  const selectedType = document.querySelector('input[name="itemType"]:checked').value;
 
   if (text.length > 0 && text.length <= 150) {
     push(wishesRef, {
       text: text,
       x: tempCoords.x,
       y: tempCoords.y,
-      type: selectedType,
+      type: selectedType, // Lưu trường type vào đây
       timestamp: Date.now(),
     });
     window.closeModal();
@@ -71,9 +65,10 @@ window.saveWish = function () {
   }
 };
 
-// 4. Vẽ vật phẩm - ĐỒNG NHẤT TÊN HÀM
+// 4. Hàm vẽ vật phẩm lên cây
 function renderItem(wish) {
   const item = document.createElement("div");
+  // Nếu dữ liệu cũ không có type, mặc định là coin
   item.className = `item item-${wish.type || "coin"}`;
   item.style.left = wish.x + "%";
   item.style.top = wish.y + "%";
