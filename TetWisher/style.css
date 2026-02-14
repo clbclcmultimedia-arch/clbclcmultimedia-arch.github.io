@@ -36,64 +36,61 @@ body {
   z-index: 10;
   transform: translate(-50%, -50%);
   transition: transform 0.2s;
-  /* Vùng đệm tàng hình giúp dễ bấm trên điện thoại */
-  padding: 10px;
+  padding: 5px; /* Giảm padding để click chính xác hơn */
+
+  /* Sử dụng đơn vị vw để tỉ lệ thuận với chiều rộng màn hình */
+  width: 4vw;
+  height: 4vw;
+  max-width: 30px; /* Giới hạn tối đa để không quá to trên màn hình 4K */
+  max-height: 30px;
+
+  /* Thiết lập để ảnh hiển thị đẹp trong khung */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .item:hover {
-  transform: translate(-50%, -50%) scale(2);
+  transform: translate(-50%, -50%) scale(1.5);
 }
 
 /* 1. Đồng xu (Xu vàng) */
 .item-coin {
-  width: 8px;
-  height: 8px;
   background: radial-gradient(circle, #ffec8b, #ffd700, #b8860b);
   border-radius: 50%;
-  border: 0.5px solid #fff;
+  border: 1px solid #fff;
   box-shadow: 0 0 5px gold;
+  width: 0.5vw; /* Xu thường nhỏ hơn các vật phẩm khác */
+  height: 0.5vw;
 }
 
-/* 2. Bao Lì xì (Sửa lỗi trôi ảnh) */
+/* 2. Bao Lì xì - Thay bằng ảnh lixi.png */
 .item-lixi {
-  width: 8px;
-  height: 11px;
-  background-color: #ff0000;
-  border: 1px solid #ffd700;
-  border-radius: 1px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-image: url("lixi.png"); /* Thay tên tệp của bạn vào đây */
 }
 .item-lixi::after {
-  content: "🧧";
-  font-size: 7px;
-  line-height: 1;
-  display: block;
-}
+  content: "";
+} /* Xóa bỏ icon cũ */
 
-/* 3. Dây ruy băng */
+/* 3. Dây ruy băng - Thay bằng ảnh ribbon.png hoặc gif */
 .item-ribbon {
-  width: 2px;
-  height: 12px;
-  background: linear-gradient(to bottom, #ff0000, #ff69b4);
-  box-shadow: 0 0 4px #fff;
-  animation: swing 2s infinite ease-in-out;
+  background-image: url("ribbon.png"); /* Thay tên tệp của bạn vào đây */
+  animation: swing 3s infinite ease-in-out;
 }
 
-/* 4. Đèn lồng */
+/* 4. Đèn lồng - Thay bằng ảnh lantern.png */
 .item-lantern {
-  width: 9px;
-  height: 9px;
-  background: #ff4500;
-  border-radius: 3px;
-  box-shadow: 0 0 8px #ff4500;
-  border: 0.5px solid gold;
+  background-image: url("lantern.png"); /* Thay tên tệp của bạn vào đây */
 }
 
 @keyframes swing {
-  0%, 100% { transform: translate(-50%, -50%) rotate(-15deg); }
-  50% { transform: translate(-50%, -50%) rotate(15deg); }
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(-15deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(15deg);
+  }
 }
 
 /* Modals */
@@ -101,7 +98,10 @@ body {
   display: none;
   position: fixed;
   z-index: 100;
-  left: 0; top: 0; width: 100%; height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -117,21 +117,43 @@ body {
   text-align: center;
 }
 
-.item-selector { margin-bottom: 15px; }
-.options { display: flex; justify-content: space-between; font-size: 0.8rem; }
-.options label { cursor: pointer; }
+.item-selector {
+  margin-bottom: 15px;
+}
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+.options label {
+  cursor: pointer;
+}
 
 textarea {
-  width: 100%; height: 80px;
-  margin: 10px 0; border-radius: 8px;
-  padding: 10px; box-sizing: border-box;
+  width: 100%;
+  height: 80px;
+  margin: 10px 0;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 button {
-  background: #b30000; color: gold;
-  border: 1px solid gold; padding: 8px 15px;
-  cursor: pointer; font-weight: bold; border-radius: 5px;
+  background: #b30000;
+  color: gold;
+  border: 1px solid gold;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
 }
 
-.display-box { background: #fdf5e6; border: 5px double #b30000; }
-#wish-text { font-size: 1.1rem; color: #b30000; font-weight: bold; }
+.display-box {
+  background: #fdf5e6;
+  border: 5px double #b30000;
+}
+#wish-text {
+  font-size: 1.1rem;
+  color: #b30000;
+  font-weight: bold;
+}
