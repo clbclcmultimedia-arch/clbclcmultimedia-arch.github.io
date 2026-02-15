@@ -1,5 +1,6 @@
 body {
-  background-color: #b30000;
+  background-image: url("back.png");
+  /* background-color: #b30000; */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
   margin: 0;
@@ -13,7 +14,7 @@ body {
 
 .container {
   text-align: center;
-  padding: 20px;
+  padding: 0px;
 }
 
 #tree-container {
@@ -173,6 +174,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   box-sizing: border-box;
 }
 
@@ -195,7 +197,7 @@ footer {
 
 /* Hiệu ứng Tiêu đề nổi bật */
 .hero-section {
-  margin-top: 80px;
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
@@ -204,9 +206,19 @@ footer {
   text-shadow:
     0 0 10px rgba(255, 215, 0, 0.5),
     3px 3px #000;
-  font-size: 2.5rem;
-  margin-bottom: 5px;
+  font-size: 3.5rem;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 0px;
   animation: glow 2s ease-in-out infinite alternate;
+}
+
+.subtitle {
+  font-family: "Pacifico", cursive;
+  font-weight: 100;
+  font-size: 1.5rem;
+  font-style: normal;
 }
 
 @keyframes glow {
