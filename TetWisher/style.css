@@ -292,3 +292,34 @@ footer {
   border: 1px solid #ccc;
   flex: 1;
 }
+
+/* Container chung cho các cây */
+.tree-box {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  user-select: none;
+}
+
+#tree-container-v2 {
+  cursor: crosshair; /* Cây mới có con trỏ chọn vị trí */
+}
+
+#tree-container-v1 {
+  cursor: default; /* Cây cũ chỉ để xem */
+  opacity: 0.9; /* Làm mờ nhẹ cây cũ để tạo cảm giác quá khứ */
+}
+
+#peach-tree-v1,
+#peach-tree-v2 {
+  max-width: 95vw;
+  max-height: 80vh;
+  border: 3px solid #ffd700;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Hiệu ứng cho cây cũ để biết là nó đã 'đóng' */
+.readonly .item {
+  filter: saturate(0.8); /* Giảm độ rực màu của các vật phẩm cũ */
+}
