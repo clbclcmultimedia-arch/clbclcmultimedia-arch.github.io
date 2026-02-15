@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cây Ước Nguyện Tết 2026</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">🧧 CLC Multimedia</div>
+      <p>Chúc Mừng Năm Mới 2026</p>
+    </header>
+
+    <div class="container">
+      <div class="hero-section">
+        <h1 class="main-title">🧧 THE FORTUNE TREE SHINE 🧧</h1>
+        <p class="subtitle">Chạm vào cây để treo lời chúc của bạn</p>
+      </div>
+
+      <div id="tree-container">
+        <img src="dao.gif" id="peach-tree" alt="Cây Đào" />
+      </div>
+    </div>
+
+    <div id="wish-modal" class="modal">
+      <div class="modal-content">
+        <h3>Lời Nhắn Gửi Cho Năm 2026</h3>
+
+        <p>Chọn vật trang trí:</p>
+        <div class="item-grid">
+          <label class="item-option">
+            <input type="radio" name="itemType" value="coin" checked />
+            <div class="option-card">
+              <span class="icon">🟡</span>
+              <span>Xu Vàng</span>
+            </div>
+          </label>
+          <label class="item-option">
+            <input type="radio" name="itemType" value="lixi" />
+            <div class="option-card">
+              <span class="icon">🧧</span>
+              <span>Lì Xì</span>
+            </div>
+          </label>
+          <label class="item-option">
+            <input type="radio" name="itemType" value="ribbon" />
+            <div class="option-card">
+              <span class="icon">💡</span>
+              <span>Dây Đèn</span>
+            </div>
+          </label>
+          <label class="item-option">
+            <input type="radio" name="itemType" value="lantern" />
+            <div class="option-card">
+              <span class="icon">🏮</span>
+              <span>Lồng Đèn</span>
+            </div>
+          </label>
+        </div>
+
+        <textarea
+          id="wish-input"
+          maxlength="150"
+          placeholder="Nhập lời chúc của bạn..."
+        ></textarea>
+
+        <div class="btn-group">
+          <button class="btn-save" onclick="saveWish()">Treo lên cây</button>
+          <button class="btn-close" onclick="closeModal()">Đóng</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2026 CLC Multimedia. 2026 WISHES RISE.</p>
+    </footer>
+
+    <div id="display-modal" class="modal">
+      <div class="modal-content display-box">
+        <div class="scroll-design">
+          <p id="wish-text"></p>
+        </div>
+        <button onclick="closeDisplay()">Đóng</button>
+      </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
