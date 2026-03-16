@@ -1,0 +1,154 @@
+:root {
+  --primary-green: #2e7d32;
+  --light-green: #e8f5e9;
+  --accent-yellow: #fdd835;
+  --dark-yellow: #fbc02d;
+  --text-color: #2c3e50;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f0f4f0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  border-top: 10px solid var(--primary-green);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  /* background: var(--accent-yellow); */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 5px;
+  font-weight: bold;
+  color: var(--primary-green);
+  font-size: 1.2rem;
+  /* border: 2px solid var(--primary-green); */
+}
+
+h1 {
+  color: var(--primary-green);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.program-bio {
+  padding: 15px;
+  background: var(--light-green);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  border-left: 5px solid var(--accent-yellow);
+}
+
+.section-title {
+  font-size: 1rem;
+  background-color: var(--primary-green);
+  color: var(--accent-yellow);
+  padding: 6px 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.input-group {
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.required {
+  color: #d32f2f;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-green);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 18px;
+  background-color: var(--accent-yellow);
+  color: var(--primary-green);
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--dark-yellow);
+  transition: all 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: var(--dark-yellow);
+  transform: translateY(-2px);
+}
+
+.form-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px dashed #ccc;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.animated-scroll {
+  animation: slideUp 0.6s ease-out;
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+  }
+}
